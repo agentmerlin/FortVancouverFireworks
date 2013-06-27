@@ -34,11 +34,15 @@ else {
 			FROM ticket
 			WHERE ticket_id='".$id."'");
 
-		//Is the ticket id good?
-		
-		//TODO YOUTH TICKET HANDLE
-		
-		if( $row = mysqli_fetch_array($result) )
+		if( in_array($id, $youth_tickets) ) {
+			$status='VALID-YOUTH TICKET';
+				
+			mysqli_query($con,
+				"INSERT INTO errors (ticket_id, status, scan_time, gate_id)
+				VALUES ('".$id."', '".$status."', NOW(), '".$login."') ");
+			
+		}
+		else if( $row = mysqli_fetch_array($result) )
 		{
 		
 			//Has the ticket already been scanned?

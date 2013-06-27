@@ -1,5 +1,8 @@
 <?php 
-$con = mysqli_connect('localhost', 'root', 'admin', 'fvf_test');
+
+include 'properties.php';
+
+$con = mysqli_connect($db_host, $db_user, $db_pw, $db_name);
 
 if (mysqli_connect_errno())
 {
