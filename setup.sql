@@ -30,7 +30,7 @@ Answer1 VARCHAR(255),
 Answer2 VARCHAR(255)
 );
 
-LOAD DATA LOCAL INFILE 'C:\\inetpub\\wwwroot\\VF\\Ticket Data.csv'
+LOAD DATA LOCAL INFILE 'C:\\inetpub\\wwwroot\\VF\\ticket-data\\Ticket Data.csv'
 INTO TABLE report
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -44,6 +44,7 @@ DROP TABLE IF EXISTS ticket;
 
 CREATE TABLE ticket (
 ticket_id VARCHAR(255),
+ticket_option VARCHAR(255),
 full_name VARCHAR(255),
 transaction_date DATETIME,
 quantity INT,
@@ -53,8 +54,8 @@ gate_id VARCHAR(255),
 scan_time DATETIME
 );
 
-INSERT INTO ticket (ticket_id, full_name, transaction_date, quantity, email, phone)
-SELECT TicketNo, CONCAT(FirstName, ' ', LastName), STR_TO_DATE(TransactionDate, '%m/%d/%Y %H:%i') as transaction_date, CAST(quantity AS UNSIGNED), email, phone
+INSERT INTO ticket (ticket_id, ticket_option, full_name, transaction_date, quantity, email, phone)
+SELECT TicketNo, Product, CONCAT(FirstName, ' ', LastName), STR_TO_DATE(TransactionDate, '%m/%d/%Y %H:%i'), CAST(quantity AS UNSIGNED), email, phone
 FROM report;
 
 DROP TABLE IF EXISTS errors;

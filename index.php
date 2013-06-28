@@ -47,6 +47,7 @@ else {
 		
 			//Has the ticket already been scanned?
 			
+			// TODO add prime ticket popup
 			if( isset($row['scan_time']) ) {
 			
 				$name=$row['scan_time']." / ".$row['gate_id']; // give the name on the ticket
@@ -59,7 +60,15 @@ else {
 			else {
 			
 				$name=$row['full_name'];
-				$status='VALID';
+				
+				if(strpos( $row['ticket_option'], 'Prime Viewing' ) !== false) {
+				
+					$status='PRIME TICKET';
+				}
+				else {
+				
+					$status='VALID';	
+				}
 			
 				mysqli_query($con,
 					"UPDATE ticket

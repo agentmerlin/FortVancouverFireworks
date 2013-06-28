@@ -18,7 +18,7 @@ else {
 	<script type="text/javascript" src="scripts.js"></script>
   </head>
     
-  <body onLoad="setFocus(); ticket_status()">
+  <body onLoad="setFocus(); ticket_status_display()">
     <h3> Fort Vancouver Fireworks </h3>
 	<h1> Ticket Taker Express </h1>
 
