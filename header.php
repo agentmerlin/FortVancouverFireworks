@@ -19,6 +19,11 @@ else {
   </head>
     
   <body onLoad="setFocus(); ticket_status_display()">
+  
+	<audio id="duplicate-sound" src="sounds/duplicate_ticket.wav" preload="auto"></audio>
+	<audio id="invalid-sound" src="sounds/invalid_ticket.wav" preload="auto"></audio>
+	<audio id="prime-sound" src="sounds/prime_viewing_ticket.wav" preload="auto"></audio>
+	
     <h3> Fort Vancouver Fireworks </h3>
 	<h1> Ticket Taker Express </h1>
 

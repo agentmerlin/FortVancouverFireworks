@@ -30,7 +30,7 @@ Answer1 VARCHAR(255),
 Answer2 VARCHAR(255)
 );
 
-LOAD DATA LOCAL INFILE 'C:\\inetpub\\wwwroot\\VF\\ticket-data\\Ticket Data.csv'
+LOAD DATA LOCAL INFILE 'C:\\inetpub\\wwwroot\\VF\\ticket-data\\Test Database.csv'
 INTO TABLE report
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
