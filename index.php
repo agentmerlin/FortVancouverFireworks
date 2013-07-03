@@ -34,12 +34,22 @@ else {
 			FROM ticket
 			WHERE ticket_id='".$id."'");
 
-		if( in_array($id, $youth_tickets) ) {
-			$status='VALID-YOUTH TICKET';
+		if( !strcmp($id,$youth_ticket) ) {
+			$status='VALID';
+			$name='YOUTH TICKET';
 				
 			mysqli_query($con,
 				"INSERT INTO errors (ticket_id, status, scan_time, gate_id)
-				VALUES ('".$id."', '".$status."', NOW(), '".$login."') ");
+				VALUES ('".$id."', '".$status."-".$name."', NOW(), '".$login."') ");
+			
+		}
+		else if( !strcmp($id,$adult_ticket) ) {
+			$status='VALID';
+			$name='ADULT TICKET';
+				
+			mysqli_query($con,
+				"INSERT INTO errors (ticket_id, status, scan_time, gate_id)
+				VALUES ('".$id."', '".$status."-".$name."'', NOW(), '".$login."') ");
 			
 		}
 		else if( $row = mysqli_fetch_array($result) )
@@ -47,7 +57,6 @@ else {
 		
 			//Has the ticket already been scanned?
 			
-			// TODO add prime ticket popup
 			if( isset($row['scan_time']) ) {
 			
 				$name=$row['scan_time']." / ".$row['gate_id']; // give the name on the ticket
