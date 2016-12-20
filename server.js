@@ -17,11 +17,11 @@ app.listen(PORT, function() {
   LOG.debug('Listening on port: ' + PORT);
 });
 
-app.post('/scan', function (req, res) {
+app.post('/scan/username/:username/ticketId/:ticketId/', function (req, res) {
 	LOG.debug('Request: %s', req.url);
 
-	var ticketId = req.body.ticketId;
-	var login = req.body.login;
+	var ticketId = req.params.ticketId;
+	var login = req.params.login;
 
 	var responseBody = {
 		ticketId: ticketId,
@@ -29,6 +29,6 @@ app.post('/scan', function (req, res) {
 		status: 'INVALID TICKET ID'
 	};
 
-	res.send(response);
+	res.send(responseBody);
 	//TODO make sql query
 });

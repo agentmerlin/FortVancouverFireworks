@@ -1,0 +1,21 @@
+{
+  "name": "fort-vancouver-ticketing-service",
+  "description": "Ticketing service for the Fort Vancouver Independence Day fireworks show",
+  "main": "app/js/index.js",
+  "authors": [
+    "DJ Sprouse"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/agentmerlin/FortVancouverFireworks",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.0"
+  }
+}

@@ -1,4 +1,4 @@
-#scan_form {
+.scanForm {
     padding: 10px;
     border-style: solid;
     border-color: #155E23;
@@ -17,24 +17,11 @@
     bottom: 0px;
     padding: 10px 20px;
 }
-#results_table {
-    padding: 10px;
-    border-style: solid;
-    border-color: #155E23;
-}
-.input_box {
-    width: 300px;
-}
 body {
     color: #666666;
     font-family: arial;
     text-align: center;
     background-image: url(../images/satinweave.png);
-}
-table {
-    color: #666666;
-    font-style: normal;
-    font-size: 12px;
 }
 input {
     margin: 5px;

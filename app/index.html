@@ -1,70 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-ng-app="fortVancouverApp">
 
 <head>
-	<title>For Vancouver Fireworks</title>
+	<title>Fort Vancouver Fireworks</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/scripts.js"></script>
-	<audio id="duplicate-sound" src="audio/duplicate_ticket.wav" preload="auto"></audio>
-	<audio id="invalid-sound" src="audio/invalid_ticket.wav" preload="auto"></audio>
-	<audio id="prime-sound" src="audio/prime_viewing_ticket.wav" preload="auto"></audio>
 </head>
 
-<body onload="setFocus(); ticket_status_display()">
+<body data-ng-controller="MainCtrl">
 	<h3> Fort Vancouver Fireworks </h3>
 	<h1> Ticket Taker Express </h1>
 	<div id="main_form">
-		<form id="scan_form" method="post" action="scan">
-			<table>
-				<tr>
+		<form class="scanForm" data-ng-hide="showInput">
+			<label class="formLabel">Login:
+				<input class="input_box" type="text" data-ng-model="username" />
+			</label>
+			</br>
+			<input type="submit" value="Enter" data-ng-click="login()">
+		</form>
+		<form class="scanForm" data-ng-show="showInput">
+			<label class="formLabel">Scan Ticket:
+				<input class="input_box" type="text" data-ng-model="ticketId" />
+			</label>
+			</br>
+			<input class="submitBtn" type="submit" value="Enter" data-ng-click="scan()">
+			</br>
+			<label class="formLabel">Ticket Number:
+				<input class="input_box" type="text" data-ng-model="submission.ticketId" disabled="disabled" />
+			</label>
+			</br>
 
-					<td>
-						<div class="input_title">Scan Ticket:</div>
-					</td>
-					<td>
-						<input class="input_box" type="text" name="ticketId">
-					</td>
-				</tr>
+			<label class="formLabel">Name:
+				<input class="input_box" type="text" data-ng-model="submission.name" disabled="disabled" />
+			</label>
+			</br>
 
-				<tr>
-					<td>
-						<input type="submit" value="Enter">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<div class="input_title">Ticket Number:</div>
-					</td>
-					<td>
-						<input class="input_box" type="text" name="ticket_number" value="123456789-ABC" disabled="disabled">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<div class="input_title">Name:</div>
-					</td>
-					<td>
-						<input class="input_box" type="text" name="name" value="John Doe" disabled="disabled">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<div class="input_title">Status:</div>
-					</td>
-					<td>
-						<input class="input_box" type="text" name="status" value="INVALID" disabled="disabled">
-					</td>
-				</tr>
-			</table>
-			<input type="hidden" name="login" value="INJECT SOMETHING HERE">
+			<label class="formLabel">Status:
+				<input class="input_box" type="text" data-ng-model="submission.status" disabled="disabled" />
+			</label>
+			</br>
 
 		</form>
 	</div>
+	<div id="footer" data-ng-show="showInput">Logged in as: <b>{{username}}</b></div>
 
-	<div id="footer">Logged in as: <b>INJECT SOMETHING HERE</b></div>
 
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+	<audio id="duplicate-sound" src="audio/duplicate_ticket.wav" preload="auto"></audio>
+	<audio id="invalid-sound" src="audio/invalid_ticket.wav" preload="auto"></audio>
+	<audio id="prime-sound" src="audio/prime_viewing_ticket.wav" preload="auto"></audio>
 </body>
+
 </html>
