@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>For Vancouver Fireworks</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<audio id="duplicate-sound" src="audio/duplicate_ticket.wav" preload="auto"></audio>
+	<audio id="invalid-sound" src="audio/invalid_ticket.wav" preload="auto"></audio>
+	<audio id="prime-sound" src="audio/prime_viewing_ticket.wav" preload="auto"></audio>
+</head>
+
+<body onload="setFocus(); ticket_status_display()">
+	<h3> Fort Vancouver Fireworks </h3>
+	<h1> Ticket Taker Express </h1>
+	<div id="main_form">
+		<form id="scan_form" method="post" action="scan">
+			<table>
+				<tr>
+
+					<td>
+						<div class="input_title">Scan Ticket:</div>
+					</td>
+					<td>
+						<input class="input_box" type="text" name="ticketId">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="submit" value="Enter">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="input_title">Ticket Number:</div>
+					</td>
+					<td>
+						<input class="input_box" type="text" name="ticket_number" value="123456789-ABC" disabled="disabled">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="input_title">Name:</div>
+					</td>
+					<td>
+						<input class="input_box" type="text" name="name" value="John Doe" disabled="disabled">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="input_title">Status:</div>
+					</td>
+					<td>
+						<input class="input_box" type="text" name="status" value="INVALID" disabled="disabled">
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="login" value="INJECT SOMETHING HERE">
+
+		</form>
+	</div>
+
+	<div id="footer">Logged in as: <b>INJECT SOMETHING HERE</b></div>
+
+</body>
+</html>
