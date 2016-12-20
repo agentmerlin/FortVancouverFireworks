@@ -1,24 +1,25 @@
 {
-    "name": "fvnt-ticket-scanner",
-    "version": "0.1.0",
-    "author": {
-        "name": "Daniel Sprouse",
-        "email": "djsprouse08@gmail.com"
+    "name": "fort-vancouver-ticketing-service",
+    "version": "1.0.0",
+    "description": "Ticketing service for the Fort Vancouver Independence Day fireworks show",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "engine": {
-        "node": ">=0.10.32"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/agentmerlin/FortVancouverFireworks.git"
     },
+    "author": "DJ Sprouse",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/agentmerlin/FortVancouverFireworks/issues"
+    },
+    "homepage": "https://github.com/agentmerlin/FortVancouverFireworks",
     "dependencies": {
-        "express": "4.6.1"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-uglify": "~0.6.0",
-        "grunt-contrib-clean": "~0.6.0",
-        "grunt-contrib-copy": "~0.7.0",
-        "grunt-contrib-concat": "~0.5.0",
-        "grunt-contrib-connect": "~0.8.0",
-        "grunt-contrib-watch": "~0.6.0",
-        "grunt-contrib-jshint": "~0.10.0"
+        "body-parser": "1.15.2",
+        "express": "4.14.0",
+        "express-healthcheck": "0.1.0",
+        "log4js": "1.0.1"
     }
 }
