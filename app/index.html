@@ -6,43 +6,43 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body data-ng-controller="MainCtrl">
+<body data-ng-controller="MainCtrl" data-ng-init="setFocus()">
 	<h3> Fort Vancouver Fireworks </h3>
 	<h1> Ticket Taker Express </h1>
 	<div id="container">
-		<form class="scanForm" data-ng-hide="showInput">
+		<form class="scanForm" data-ng-show="showLogin">
 			<label class="formLabel">Login:
-				<input class="input_box" type="text" data-ng-model="username" />
+				<input id="loginInput" class="input_box" type="text" data-ng-model="username" />
 			</label>
 			</br>
 			<input type="submit" value="Enter" data-ng-click="login()">
 		</form>
-		<div data-ng-show="showInput">
+		<div data-ng-hide="showLogin">
 			<form class="scanForm">
 				<label class="formLabel">Scan Ticket:
-					<input class="input_box" type="text" data-ng-model="ticketId" />
+					<input id="ticketInput" class="input_box" type="text" data-ng-model="ticketId" />
 				</label>
 				</br>
 				<input class="submitBtn" type="submit" value="Enter" data-ng-click="scan()">
 				</br>
-				<label class="formLabel">Ticket Number:
+				<label class="formLabel" for="ticketId">Ticket Number:
 					<input id="ticketId" class="input_box" type="text" data-ng-model="submission.ticketId" disabled="disabled" />
 				</label>
 				</br>
 
-				<label class="formLabel">Name:
+				<label class="formLabel" for="ticketName">Name:
 					<input id="ticketName" class="input_box" type="text" data-ng-model="submission.name" disabled="disabled" />
 				</label>
 				</br>
 
-				<label class="formLabel">Status:
+				<label class="formLabel" for="status">Status:
 					<input id="status" class="input_box" type="text" data-ng-model="submission.status" data-ng-class="statusClass" disabled="disabled" />
 				</label>
 				</br>
 			</form>
 		</div>
 	</div>
-	<div id="footer" data-ng-show="showInput">Logged in as: <b>{{username}}</b></div>
+	<div id="footer" data-ng-hide="showLogin">Logged in as: <b>{{username}}</b></div>
 
 
 	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
