@@ -3,7 +3,7 @@
     border-style: solid;
     border-color: #155E23;
 }
-#main_form {
+#container {
     padding: 10px;
     width: 400px;
     margin: 20px auto;
@@ -16,6 +16,21 @@
     left: 0px;
     bottom: 0px;
     padding: 10px 20px;
+}
+.prime {
+    font-weight: bold;
+    color: blue;
+    border-color: blue;
+}
+.valid {
+    font-weight: bold;
+    color: green;
+    border-color: green;
+}
+.invalid {
+    font-weight: bold;
+    color: red;
+    border-color: red;
 }
 body {
     color: #666666;

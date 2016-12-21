@@ -9,7 +9,7 @@
 <body data-ng-controller="MainCtrl">
 	<h3> Fort Vancouver Fireworks </h3>
 	<h1> Ticket Taker Express </h1>
-	<div id="main_form">
+	<div id="container">
 		<form class="scanForm" data-ng-hide="showInput">
 			<label class="formLabel">Login:
 				<input class="input_box" type="text" data-ng-model="username" />
@@ -17,35 +17,35 @@
 			</br>
 			<input type="submit" value="Enter" data-ng-click="login()">
 		</form>
-		<form class="scanForm" data-ng-show="showInput">
-			<label class="formLabel">Scan Ticket:
-				<input class="input_box" type="text" data-ng-model="ticketId" />
-			</label>
-			</br>
-			<input class="submitBtn" type="submit" value="Enter" data-ng-click="scan()">
-			</br>
-			<label class="formLabel">Ticket Number:
-				<input class="input_box" type="text" data-ng-model="submission.ticketId" disabled="disabled" />
-			</label>
-			</br>
+		<div data-ng-show="showInput">
+			<form class="scanForm">
+				<label class="formLabel">Scan Ticket:
+					<input class="input_box" type="text" data-ng-model="ticketId" />
+				</label>
+				</br>
+				<input class="submitBtn" type="submit" value="Enter" data-ng-click="scan()">
+				</br>
+				<label class="formLabel">Ticket Number:
+					<input id="ticketId" class="input_box" type="text" data-ng-model="submission.ticketId" disabled="disabled" />
+				</label>
+				</br>
 
-			<label class="formLabel">Name:
-				<input class="input_box" type="text" data-ng-model="submission.name" disabled="disabled" />
-			</label>
-			</br>
+				<label class="formLabel">Name:
+					<input id="ticketName" class="input_box" type="text" data-ng-model="submission.name" disabled="disabled" />
+				</label>
+				</br>
 
-			<label class="formLabel">Status:
-				<input class="input_box" type="text" data-ng-model="submission.status" disabled="disabled" />
-			</label>
-			</br>
-
-		</form>
+				<label class="formLabel">Status:
+					<input id="status" class="input_box" type="text" data-ng-model="submission.status" data-ng-class="statusClass" disabled="disabled" />
+				</label>
+				</br>
+			</form>
+		</div>
 	</div>
 	<div id="footer" data-ng-show="showInput">Logged in as: <b>{{username}}</b></div>
 
 
 	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 
 	<audio id="duplicate-sound" src="audio/duplicate_ticket.wav" preload="auto"></audio>
