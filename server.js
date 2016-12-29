@@ -7,17 +7,19 @@ var PORT = process.env.APPLICATION_PORT || 8200;
 var app = express();
 
 app.use(bodyParser.json());
-app.use('/', express.static(path.join(__dirname, 'app/index.html')));
 app.use(express.static(path.join(__dirname, 'app')));
-app.use('/isAlive', require('express-healthcheck')({
-    healthy: function () {
-        return true;
-    }
-}));
 
 app.listen(PORT, function () {
     LOG.debug('Listening on port: ' + PORT);
 });
+
+app.get('/', express.static(path.join(__dirname, 'app/index.html')));
+
+app.get('/isAlive', require('express-healthcheck')({
+    healthy: function () {
+        return true;
+    }
+}));
 
 //TODO retrieve ticketId from DB.
 //Send success if ticketId is in the DB. Record timestamp and username.

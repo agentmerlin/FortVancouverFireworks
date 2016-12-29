@@ -7,6 +7,7 @@
 # Ignore artifacts from toolchain
 node_modules/
 bower_components/
+app/lib/
 npm-debug.log
 
 # Ignore linux swap files
