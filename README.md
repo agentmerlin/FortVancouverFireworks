@@ -7,18 +7,21 @@ Website for the Fort Vancouver Fireworks event on Independence Day. The website 
 
 Make sure you have NodeJS and NPM installed and accessible through $PATH
 
-**Install the dependencies**
+#### Install the dependencies
 
 From the project directory, run:
 
 `npm install -g bower && npm install && bower install`
 
-**Start Server Locally**
+#### Start server locally
 
 1. Run: `npm start`
 2. Navigate to: http://localhost:8200
 
 ## Dependencies
+
+* NodeJS
+* Bower
 
 [NodeJS]: https://nodejs.org
 [Bower]: https://bower.io/
