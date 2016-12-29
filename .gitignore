@@ -4,30 +4,14 @@
 # Ignore IntelliJ IDEA project root directory
 .idea
 
-# Ignore all build artifact directories, everywhere
-**/dist
-dist/
-
-# Ignore all target directories, everywhere
-**/target
-
 # Ignore artifacts from toolchain
 node_modules/
 bower_components/
-logs/
-tmp/
-test-results.xml
-rpm/
-target/
-jshint.xml
+npm-debug.log
 
 # Ignore linux swap files
 *~
 *.swp
-
-# Ignore misc
-.DS_Store
-Icon?
 
 # Ignore all 'orig' files left by a merge conflict
 *.orig
