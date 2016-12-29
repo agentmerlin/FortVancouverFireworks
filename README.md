@@ -18,11 +18,17 @@ From the project directory, run:
 1. Run: `npm start`
 2. Navigate to: [http://localhost:8200][1]
 
+#### Run docker image
+
+`docker run -p 80:8200 sproused/ticket-taker-express`
+
 ## Dependencies
 
 * [NodeJS][NodeJS]
 * [BowerJS][BowerJS]
+* [Docker][Docker]
 
 [NodeJS]: https://nodejs.org
-[BowerJS]: https://bower.io/
+[BowerJS]: https://bower.io
+[Docker]: https://www.docker.com
 [1]: http://localhost:8200
