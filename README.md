@@ -16,12 +16,13 @@ From the project directory, run:
 #### Start server locally
 
 1. Run: `npm start`
-2. Navigate to: http://localhost:8200
+2. Navigate to: [http://localhost:8200][1]
 
 ## Dependencies
 
-* NodeJS
-* Bower
+* [NodeJS][NodeJS]
+* [BowerJS][BowerJS]
 
 [NodeJS]: https://nodejs.org
-[Bower]: https://bower.io/
+[BowerJS]: https://bower.io/
+[1]: http://localhost:8200
