@@ -26,6 +26,7 @@ myApp.controller('MainCtrl', [
             $timeout($scope.setFocus);
         };
 
+		//TODO if called multiple times too quickly, audio doesn't play
         $scope.scan = function () {
             Api.scan($scope.ticketId, $scope.username).then(function (data) {
                 $scope.submission = data;
